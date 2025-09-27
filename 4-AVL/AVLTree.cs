@@ -8,12 +8,19 @@ namespace ALGA
 
         public void insert(int number)
         {
-            throw new NotImplementedException();
+            if (root == null)
+                root = new Node(number);
+            else
+                root = root.insert(number);
         }
 
         public bool isBalanced()
         {
-            throw new NotImplementedException();
+            if (root == null)
+                return true;
+
+            int balance = root.GetBalanceFactor();
+            return balance >= -1 && balance <= 1;
         }
 
         public void prettyprint()
